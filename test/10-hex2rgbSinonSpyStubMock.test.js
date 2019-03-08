@@ -30,7 +30,22 @@ describe('hex2rgbWithSinon', function() {
                 hex2rgb.parse.restore();
                 done();
             });
+        });
 
+        it('should always pass a 6 item array to parse', function(done) {
+
+            var mock = sinon.mock(hex2rgb);
+            mock.expects('parse').twice().withExactArgs('000000'.split(''));
+
+            hex2rgb.convert('#000000', function(error, result) {
+
+                hex2rgb.convert('#000', function(error, result) {
+
+                    mock.verify();
+                    done();
+                });
+
+            });
         });
 
         it('should throw an error if the value is not a hex code', function(done) {

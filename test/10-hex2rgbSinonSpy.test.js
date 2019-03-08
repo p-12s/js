@@ -20,6 +20,19 @@ describe('hex2rgbWithSinon', function() {
             });
         });
 
+        it('should always return the result of parse', function(done) {
+
+            sinon.stub(hex2rgb, 'parse').returns([0, 0, 200]);
+
+            hex2rgb.convert('#abc', function(error, result) {
+                expect(result).to.deep.equal([0, 0, 200]);
+
+                hex2rgb.parse.restore();
+                done();
+            });
+
+        });
+
         it('should throw an error if the value is not a hex code', function(done) {
 
             hex2rgb.convert('blue', function(error, result) {

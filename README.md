@@ -24,5 +24,5 @@
 - Stub
 - Mock
 
-###Почитать:  
+### Почитать:  
 [learn.javascript.ru/testing](https://learn.javascript.ru/testing)

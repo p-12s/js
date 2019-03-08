@@ -1,7 +1,7 @@
 var hex2rgb = require('../lib/hex2rgbWithCallback');
 var assert = require('assert');
 
-describe.skip('hex2rgbWithCallback', function() {
+describe('hex2rgbWithCallback', function() {
 
     it.skip('should throw an error if the value is not a hex code', function(done) {
 
